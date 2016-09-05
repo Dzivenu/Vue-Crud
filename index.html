@@ -1,0 +1,121 @@
+<!-- index.html -->
+
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Nodejs-Problemset</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="node_modules/semantic-ui-css/semantic.min.css">
+</head>
+<body>
+  
+  <div class="ui fixed menu">
+    <div class="ui container">
+      <a href="#" class="header item">
+        Contact Management
+      </a>
+    </div>
+  </div>
+  
+  <div id="events"  class="ui vertical stripe segment">
+      <div class="ui container" style="margin-top:70px">
+        <div class="ui stackable two column grid">
+          <div class="four wide column">
+            <div class="ui segment">
+              <div class="ui form">
+                
+                <div class="field">
+                  <input placeholder="Title" v-model="event.title">
+                </div>
+
+                <div class="field">
+                  <input placeholder="Name" v-model="event.name">
+                </div>
+
+                <div class="field">
+                  <input placeholder="Email" v-model="event.email">
+                </div>
+
+                <div class="field">
+                  <input placeholder="Phone" v-model="event.phone">
+                </div>
+
+                <div class="field">
+                  <textarea placeholder="Address" v-model="event.address"></textarea>
+                </div>
+
+                <div class="field">
+                  <input placeholder="Company" v-model="event.company">
+                </div>
+
+                <button class="ui primary button" v-on:click="addEvent">Submit</button>
+              </div>
+            </div>
+          </div>
+          <div class="twelve wide column">
+            <vuetable 
+            api-url="/api/contact" 
+            :fields="columns"
+            :item-actions="tableaction"
+            pagination-path=""
+            table-class="ui red unstackable table">
+              
+            </vuetable>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modal For Editing -->
+      <div id="modal" class="ui small basic modal">
+        <i class="close icon"></i>
+        <div class="header">
+          Edit Contact
+        </div>
+        
+        <div class="content">
+          <div class="ui form">
+            <div class="field">
+              <input id="contact_id" v-model="event.contact_id" readonly>
+            </div>
+
+            <div class="field">
+              <input placeholder="Title" id="title" v-model="event.title">
+            </div>
+
+            <div class="field">
+              <input placeholder="Name" id="name" v-model="event.name">
+            </div>
+
+            <div class="field">
+              <input placeholder="Email" id="email" v-model="event.email">
+            </div>
+
+            <div class="field">
+              <input placeholder="Phone" id="phone" v-model="event.phone">
+            </div>
+
+            <div class="field">
+              <textarea placeholder="Address" id="address" v-model="event.address"></textarea>
+            </div>
+
+            <div class="field">
+              <input placeholder="Company" id="company" v-model="event.company">
+            </div>
+
+            <button class="ui primary button" v-on:click="editEvent">Edit</button>
+          </div>
+        </div>
+      </div>
+  </div>
+
+  <!-- JS -->
+  <script src="node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="node_modules/vue/dist/vue.min.js"></script>
+  <script src="node_modules/vue-resource/dist/vue-resource.min.js"></script>
+  <script src="node_modules/vuetable/dist/vue-table.min.js"></script>
+  <script src="node_modules/semantic-ui-css/semantic.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

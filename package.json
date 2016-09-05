@@ -1,0 +1,24 @@
+{
+  "name": "Package for Vue Crud",
+  "version": "1.0.0",
+  "description": "Dependencies for apps",
+  "author": "Endru Reza",
+  "license": "MIT",
+  "main": "server.js",
+  "dependencies": {
+    "ejs": "^2.5.1",
+    "express": "*",
+    "jquery": "^3.1.0",
+    "mongoose": "*",
+    "mongoose-paginate": "^5.0.0",
+    "semantic-ui-css": "^2.2.4",
+    "vue": "*",
+    "vue-resource": "*",
+    "vuetable": "^1.4.1"
+  },
+  "devDependencies": {
+    "body-parser": "*",
+    "errorhandler": "*",
+    "method-override": "*"
+  }
+}
